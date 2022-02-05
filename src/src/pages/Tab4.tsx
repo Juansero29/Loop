@@ -1,31 +1,26 @@
-import { IonContent, IonHeader, IonPage, IonSelect, IonSelectOption, IonTitle, IonToolbar, IonItem } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonItem, IonTitle, IonToolbar, IonLabel } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab4.css';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import { t } from 'i18next';
+
 
 const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Settings</IonTitle>
+          <IonTitle>{t('Settings')}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-
-    <IonItem>
-      <IonSelect >
-        <IonSelectOption value="en">English</IonSelectOption>
-        <IonSelectOption value="es">Spanish</IonSelectOption>
-        <IonSelectOption value="fr">French</IonSelectOption>
-      </IonSelect>
-    </IonItem>
-
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Settings</IonTitle>
+            <IonTitle size="large">{t('Settings')}</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 4 page" />
+
+        <LanguageSwitcher />
       </IonContent>
     </IonPage>
   );
