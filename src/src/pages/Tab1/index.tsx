@@ -8,7 +8,7 @@ import {
   IonFabButton,
   IonIcon,
 } from '@ionic/react';
-import ExploreContainer from '../../components/ExploreContainer';
+import ExploreContainer from 'components/ExploreContainer';
 import { camera, trash, close, playOutline } from 'ionicons/icons';
 import './Tab1.css';
 

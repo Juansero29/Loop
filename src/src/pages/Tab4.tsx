@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonItem, IonTitle, IonToolbar, IonLabel } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import ExploreContainer from 'components/ExploreContainer';
 import './Tab4.css';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import LanguageSwitcher from 'components/LanguageSwitcher';
 import { t } from 'i18next';
 
 
