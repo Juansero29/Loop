@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@ionic-native/sqlite": "^5.36.0",
+    "moment": "^2.29.1"
+  }
+}
