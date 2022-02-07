@@ -3,12 +3,14 @@ import { Duration } from "moment";
 
 import { Entity, Column } from "typeorm";
 
+
+
 @Entity()
 export class Session extends AppEntity {
-  @Column()
+  @Column("text")
   startDate!: Date;
-  @Column()
+  @Column("text")
   endDate!: Date;
-  @Column()
+  @Column("text")
   duration!: Duration;
 }

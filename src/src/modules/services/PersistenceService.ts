@@ -12,6 +12,10 @@ export class PersistenceService {
       entities: [Session],
       synchronize: true,
     });
+    // log database location ?
+    // https://github.com/storesafe/cordova-sqlite-storage
+    // https://github.com/typeorm/typeorm/issues/798
+    // console.log(this.connection.driver.)
   }
 
   async upsert(entity: AppEntity) {
