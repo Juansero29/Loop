@@ -1,10 +1,14 @@
-import { Entity } from "./Entity";
+import { AppEntity } from "./AppEntity";
 import { Duration } from "moment";
 
-export class Session extends Entity {
+import { Entity, Column } from "typeorm";
 
-    startDate!: Date;
-    endDate!: Date;
-    duration!: Duration;
-
+@Entity()
+export class Session extends AppEntity {
+  @Column()
+  startDate!: Date;
+  @Column()
+  endDate!: Date;
+  @Column()
+  duration!: Duration;
 }

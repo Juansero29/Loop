@@ -1,38 +1,36 @@
-import { SQLite, SQLiteObject } from "@ionic-native/sqlite";
 import { Session } from "../models/Session";
+import { createConnection, Connection } from "typeorm";
+import { AppEntity } from "../models/AppEntity";
 
 export class PersistenceService {
-  database!: SQLiteObject;
+  connection!: Connection;
 
-  executeQuery(query: string) {}
-
-  initialize() {
-    try {
-      SQLite.create({
-        name: "data.db",
-        location: "default",
-      }).then(async (db: SQLiteObject) => {
-        try {
-          const create = await db.executeSql(
-            "CREATE TABLE IF NOT EXISTS Sessions(id TEXT PRIMARY KEY, createdAt TEXT, modifiedAt TEXT, createdBy TEXT, startDate TEXT, endDate TEXT, duration TEXT)",
-            []
-          );
-          await console.log("Table created/exists. Msg: ", create);
-          const insert = await db.executeSql(
-            "INSERT INTO Sessions (id, createdAt, modifiedAt, createdBy, startDate, endDate, duration) values (?, ?, ?, ?, ?, ?, ?)",
-            ["TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST"]
-          );
-          await console.log("Inserted DATA: ", insert);
-        } catch (e) {
-          console.log("SQL error: ", e);
-        }
-      });
-    } catch (e) {
-      console.log("please use a device: ", e);
-    }
+  async initialize() {
+    this.connection = await createConnection({
+      type: "sqlite",
+      database: "data",
+      entities: [Session],
+      synchronize: true,
+    });
   }
 
-  retriveA11Sessions(): Array<Session> {
-    return new Array<Session>();
+  async upsert(entity: AppEntity) {
+    await this.connection.manager
+      .save(entity)
+      .catch((error) => console.log(error));
+  }
+
+  async deletSessionById(id: string) {
+    await this.connection.manager
+      .delete(Session, id)
+      .catch((error) => console.log(error));
+  }
+
+  async findSessionById(id: string): Promise<Session | undefined> {
+    return this.connection.manager.findOne(Session, id);
+  }
+
+  async retriveAllSessions(): Promise<Array<Session>> {
+    return this.connection.manager.find(Session);
   }
 }

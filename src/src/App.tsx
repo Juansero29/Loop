@@ -1,4 +1,6 @@
 import { Redirect, Route } from 'react-router-dom';
+import "reflect-metadata";
+
 import {
   IonApp,
   IonIcon,
@@ -11,6 +13,8 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { infiniteOutline, statsChartOutline, calendarOutline, settingsOutline } from 'ionicons/icons';
+
+
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -35,13 +39,23 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-import React from 'react';
+
+
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { PersistenceService } from './modules/services/PersistenceService';
 
 setupIonicReact();
 
 
 const App: React.FC = () => {
+  
+  useEffect(() => {
+    // to change in order to use DEPENDENCY INJECTION? https://thomasburlesonia.medium.com/https-medium-com-thomasburlesonia-universal-dependency-injection-86a8c0881cbc
+    let persistenceService = new PersistenceService();
+    persistenceService.initialize();
+  });
+
   const { t } = useTranslation();
   return (
     <IonApp>
