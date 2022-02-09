@@ -9,7 +9,8 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-  setupIonicReact
+  setupIonicReact,
+  useIonViewWillEnter
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { infiniteOutline, statsChartOutline, calendarOutline, settingsOutline } from 'ionicons/icons';
@@ -40,22 +41,13 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { PersistenceService } from './modules/services/PersistenceService';
 
 setupIonicReact();
 
 
 const App: React.FC = () => {
-  
-  useEffect(() => {
-    // to change in order to use DEPENDENCY INJECTION? https://thomasburlesonia.medium.com/https-medium-com-thomasburlesonia-universal-dependency-injection-86a8c0881cbc
-    let persistenceService = new PersistenceService();
-    persistenceService.initialize();
-  });
-
   const { t } = useTranslation();
   return (
     <IonApp>

@@ -2,7 +2,11 @@ import { Session } from "../models/Session";
 import { createConnection, Connection } from "typeorm";
 import { AppEntity } from "../models/AppEntity";
 
-export class PersistenceService {
+import { makeInjector, DependencyInjector, HookTuple, useInjectorHook } from '@mindspace-io/utils';
+
+
+
+export class PersistenceStorageService {
   connection!: Connection;
 
   async initialize() {
@@ -37,4 +41,12 @@ export class PersistenceService {
   async retriveAllSessions(): Promise<Array<Session>> {
     return this.connection.manager.find(Session);
   }
+}
+
+export const injector: DependencyInjector = makeInjector([
+  { provide: PersistenceStorageService, useClass: PersistenceStorageService },
+]);
+
+export function usePersistenceHook(token: any): HookTuple<PersistenceStorageService, DependencyInjector> {
+  return useInjectorHook(token, injector);
 }
