@@ -26,6 +26,13 @@ App for tracking male heat-based contraception
 
 ## How To Compile
 
+This cleans the git repository, does any possible updates to packages, installs this updates then runs the app
+
+1. `git clean -fxd`
+1. `npm update --legacy-peer-deps`
+1. `npm install --legacy-peer-deps`
+1. `ionic serve`
+
 ## How To Debug
 
 ## How To Publish
