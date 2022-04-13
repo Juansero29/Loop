@@ -12,6 +12,11 @@ App for tracking male heat-based contraception
 - Change app language between English and French at any given moment, changing all non-user-input text in the app to the required languages. More languages may be added in the future. [#8](https://github.com/Juansero29/Loop/issues/8)
 - Other Requirements [#1](https://github.com/Juansero29/Loop/issues/1), [#6](https://github.com/Juansero29/Loop/issues/6), [#8](https://github.com/Juansero29/Loop/issues/8)
 
+## Pre-requisites
+
+1. [Install Node/NPM](https://ionicframework.com/docs/intro/environment#node--npm)
+1. [Intall Ionic CLI](https://ionicframework.com/docs/intro/cli)
+
 ## How To Run
 
 1. Open a console at the root of the `Loop` repo
