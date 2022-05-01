@@ -33,6 +33,14 @@ This cleans the git repository, does any possible updates to packages, installs 
 1. `npm install --legacy-peer-deps`
 1. `ionic serve`
 
+### If it does not compile on mac
+
+1. `sudo npm install npm@latest -g`
+1. `sudo npm cache clean --force`
+1. `sudo rm -rf ~/.npm`
+1. `sudo rm -rf node_modules`
+1. `sudo rm -f package-lock.json`
+
 ## How To Debug
 
 ## How To Publish
