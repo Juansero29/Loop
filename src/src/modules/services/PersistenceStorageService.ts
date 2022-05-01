@@ -2,7 +2,7 @@ import { Session } from "../models/Session";
 import { createConnection, Connection, IsNull, Not } from "typeorm";
 import { AppEntity } from "../models/AppEntity";
 
-import { makeInjector, DependencyInjector, HookTuple, useInjectorHook } from '@mindspace-io/utils';
+import { makeInjector, DependencyInjector, HookTuple, useInjectorHook } from '@mindspace-io/react';
 
 export class PersistenceStorageService {
 
