@@ -20,7 +20,7 @@ import {Session} from '../modules/models/Session';
 
 const Tab1: React.FC = () => {
 
-  let currentSession!: Session | undefined;
+  let currentSession!: Session | null;
   
   var labelShowingCurrentSession;
 
@@ -41,7 +41,7 @@ const Tab1: React.FC = () => {
   });
 
   function isSessionOngoing() : boolean {
-    return currentSession !== undefined;
+    return currentSession !== undefined && currentSession !== null;
   }
 
   return (
