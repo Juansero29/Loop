@@ -49,6 +49,7 @@ This cleans the git repository, does any possible updates to packages, installs 
 
 1. [Setup a new MacBook M1](https://amanhimself.dev/blog/setup-macbook-m1/)
 1. [Install NVM, npm and Node on MacBook M1](https://amanhimself.dev/blog/install-nodejs-using-nvm-on-macos-m1/)
+1. [Watched this video and followed step by step to install Ionic](https://www.youtube.com/watch?v=5QldhWHKvfQ)
 
 ## Packages Installed In this app
 
