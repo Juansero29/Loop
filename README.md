@@ -60,4 +60,5 @@ This cleans the git repository, does any possible updates to packages, installs 
 - npm install reflect-metadata --save
 - npm install @types/node --save-dev
 - npm install sqlite3 --save
-- npm install @mindspace-io/react --save 
+- npm install @mindspace-io/react --save --legacy-peer-deps
+- npm install moment --save --legacy-peer-deps

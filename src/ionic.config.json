@@ -1,8 +1,7 @@
 {
-  "name": "Loop",
+  "name": "src3",
   "integrations": {
     "capacitor": {}
   },
-  "type": "react",
-  "id": "b482e7f5"
+  "type": "react"
 }

@@ -21,6 +21,7 @@ const Tab3: React.FC = () => {
         </IonHeader>
 
         <LanguageSwitcher />
+        
       </IonContent>
     </IonPage>
   );
