@@ -1,6 +1,4 @@
 import { Redirect, Route } from 'react-router-dom';
-import "reflect-metadata";
-
 import {
   IonApp,
   IonIcon,
@@ -9,12 +7,10 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-  setupIonicReact,
+  setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { infiniteOutline, statsChartOutline, calendarOutline, settingsOutline } from 'ionicons/icons';
-
-
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -39,12 +35,9 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 setupIonicReact();
-
 
 const App: React.FC = () => {
   const { t } = useTranslation();
@@ -62,10 +55,6 @@ const App: React.FC = () => {
             <Route path="/tab3">
               <Tab3 />
             </Route>
-
-            <Route path="/tab4">
-              <Tab4 />
-            </Route>
             <Route exact path="/">
               <Redirect to="/tab1" />
             </Route>
@@ -73,15 +62,15 @@ const App: React.FC = () => {
           <IonTabBar slot="bottom">
             <IonTabButton tab="tab1" href="/tab1">
               <IonIcon icon={infiniteOutline} />
-              <IonLabel>{t('Today')}</IonLabel>
+              <IonLabel>Tab 1</IonLabel>
             </IonTabButton>
             <IonTabButton tab="tab2" href="/tab2">
               <IonIcon icon={calendarOutline} />
-              <IonLabel>{t('History')}</IonLabel>
+              <IonLabel>Tab 2</IonLabel>
             </IonTabButton>
             <IonTabButton tab="tab3" href="/tab3">
               <IonIcon icon={statsChartOutline} />
-              <IonLabel>{t('Statistics')}</IonLabel>
+              <IonLabel>Tab 3</IonLabel>
             </IonTabButton>
             <IonTabButton tab="tab4" href="/tab4">
               <IonIcon icon={settingsOutline} />
@@ -93,6 +82,5 @@ const App: React.FC = () => {
     </IonApp>
   );
 }
-
 
 export default App;
