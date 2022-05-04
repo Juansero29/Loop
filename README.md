@@ -44,3 +44,20 @@ This cleans the git repository, does any possible updates to packages, installs 
 ## How To Debug
 
 ## How To Publish
+
+## Configuring Mac To Start, Build and Deploy Ionic Applications
+
+1. [Setup a new MacBook M1](https://amanhimself.dev/blog/setup-macbook-m1/)
+1. [Install NVM, npm and Node on MacBook M1](https://amanhimself.dev/blog/install-nodejs-using-nvm-on-macos-m1/)
+
+## Packages Installed In this app
+
+- npm install react-i18next i18next --save
+- npm install typeorm --save
+  - in tsconfig.json
+    - "experimentalDecorators": true,
+    - "emitDecoratorMetadata": true
+- npm install reflect-metadata --save
+- npm install @types/node --save-dev
+- npm install sqlite3 --save
+- npm install @mindspace-io/react --save 
