@@ -29,9 +29,9 @@ export class PersistenceStorageService {
     // https://github.com/typeorm/typeorm/issues/798
 
     this.dataSource = new DataSource({
-
       type: "sqlite",
-      database: `/data.sqlite3`,
+      logging: false,
+      database: "data",
       entities: [LoopSession, Pause, Experience, User],
       synchronize: true,
     });
